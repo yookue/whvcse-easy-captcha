@@ -262,7 +262,8 @@ captcha.setCharType(Captcha.TYPE_ONLY_NUMBER);
 | Captcha.FONT_8  | ![](https://s2.ax1x.com/2019/08/23/msMmXF.png) |
 | Captcha.FONT_9  | ![](https://s2.ax1x.com/2019/08/23/msMVpV.png) |
 | Captcha.FONT_10 | ![](https://s2.ax1x.com/2019/08/23/msMZlT.png) |
-| Captcha.FONT_11 | zhiyongwrite                                   |
+| Captcha.FONT_11 | dancing-script                                 |
+| Captcha.FONT_12 | zhiyong-write                                  |
 
 使用方法：
 ```
