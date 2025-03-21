@@ -1,8 +1,10 @@
 Fork & Extension of Whvcse Easy Captcha
 Using jakarta servlet instead of javax servlet
-Adding new font `zhiyongwrite`, `Captcha.FONT_11`
+Adding new font `dancing-script`, `Captcha.FONT_11`
+Adding new font `zhiyong-write`, `Captcha.FONT_12`
 Adding advanced gif generation parameters
-Renaming package `com.wf` to `io.github.whvcse`
+Renaming package `com.wf` to `com.github.whvcse`
+Renaming class `SpecCaptcha` to `PngCaptcha`
 https://yookue.com
 
 Easy Captcha

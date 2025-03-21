@@ -5,7 +5,7 @@
 
 
 ## 1.简介
-&emsp;Java图形验证码，支持gif、中文、算术等类型，可用于Java Web、JavaSE等项目。
+&emsp;Java 图形验证码，支持 gif、中文、算术等类型，可用于 Java Web、JavaSE 等项目。
 
 ---
 
@@ -94,17 +94,19 @@ public class CaptchaController {
 
 ### 4.2.在servlet中使用
 web.xml中配置servlet：
+
 ```xml
+
 <web-app>
-    <!-- 图形验证码 servlet -->
-    <servlet>
-        <servlet-name>CaptchaServlet</servlet-name>
-        <servlet-class>io.github.whvcse.easycaptcha.servlet.CaptchaServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CaptchaServlet</servlet-name>
-        <url-pattern>/captcha</url-pattern>
-    </servlet-mapping>
+  <!-- 图形验证码 servlet -->
+  <servlet>
+    <servlet-name>CaptchaServlet</servlet-name>
+    <servlet-class>com.github.whvcse.easycaptcha.servlet.CaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CaptchaServlet</servlet-name>
+    <url-pattern>/captcha</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 ```
@@ -228,14 +230,14 @@ public class Test {
 
 ### 5.2.验证码字符类型
 
- 类型 | 描述 
- :--- | :--- 
- TYPE_DEFAULT | 数字和字母混合 
- TYPE_ONLY_NUMBER | 纯数字
- TYPE_ONLY_CHAR | 纯字母 
- TYPE_ONLY_UPPER | 纯大写字母
- TYPE_ONLY_LOWER | 纯小写字母
- TYPE_NUM_AND_UPPER | 数字和大写字母
+| 类型                 | 描述       |
+|:-------------------|:---------|
+| TYPE_DEFAULT       | 数字和字母混合  |
+| TYPE_ONLY_NUMBER   | 纯数字      |
+| TYPE_ONLY_CHAR     | 纯字母      |
+| TYPE_ONLY_UPPER    | 纯大写字母    |
+| TYPE_ONLY_LOWER    | 纯小写字母    |
+| TYPE_NUM_AND_UPPER | 数字和大写字母  |
 
 使用方法：
 ```
@@ -248,18 +250,19 @@ captcha.setCharType(Captcha.TYPE_ONLY_NUMBER);
 ### 5.3.字体设置
 内置字体：
 
- 字体 | 效果 
- :--- | :--- 
- Captcha.FONT_1 |  ![](https://s2.ax1x.com/2019/08/23/msMe6U.png)
- Captcha.FONT_2 | ![](https://s2.ax1x.com/2019/08/23/msMAf0.png)
- Captcha.FONT_3 |  ![](https://s2.ax1x.com/2019/08/23/msMCwj.png)
- Captcha.FONT_4 | ![](https://s2.ax1x.com/2019/08/23/msM9mQ.png)
- Captcha.FONT_5 | ![](https://s2.ax1x.com/2019/08/23/msKz6S.png)
- Captcha.FONT_6 | ![](https://s2.ax1x.com/2019/08/23/msKxl8.png)
- Captcha.FONT_7 | ![](https://s2.ax1x.com/2019/08/23/msMPTs.png)
- Captcha.FONT_8 | ![](https://s2.ax1x.com/2019/08/23/msMmXF.png)
- Captcha.FONT_9 | ![](https://s2.ax1x.com/2019/08/23/msMVpV.png)
- Captcha.FONT_10 | ![](https://s2.ax1x.com/2019/08/23/msMZlT.png)
+| 字体              | 效果                                             |
+|:----------------|:-----------------------------------------------|
+| Captcha.FONT_1  | ![](https://s2.ax1x.com/2019/08/23/msMe6U.png) |
+| Captcha.FONT_2  | ![](https://s2.ax1x.com/2019/08/23/msMAf0.png) |
+| Captcha.FONT_3  | ![](https://s2.ax1x.com/2019/08/23/msMCwj.png) |
+| Captcha.FONT_4  | ![](https://s2.ax1x.com/2019/08/23/msM9mQ.png) |
+| Captcha.FONT_5  | ![](https://s2.ax1x.com/2019/08/23/msKz6S.png) |
+| Captcha.FONT_6  | ![](https://s2.ax1x.com/2019/08/23/msKxl8.png) |
+| Captcha.FONT_7  | ![](https://s2.ax1x.com/2019/08/23/msMPTs.png) |
+| Captcha.FONT_8  | ![](https://s2.ax1x.com/2019/08/23/msMmXF.png) |
+| Captcha.FONT_9  | ![](https://s2.ax1x.com/2019/08/23/msMVpV.png) |
+| Captcha.FONT_10 | ![](https://s2.ax1x.com/2019/08/23/msMZlT.png) |
+| Captcha.FONT_11 | zhiyongwrite                                   |
 
 使用方法：
 ```
@@ -361,9 +364,11 @@ public class CaptchaController {
 
 - **2025-03-18 (v1.7.0)**
     - 升级 JDK 17，支持 jakarta servlet
-    - 增加新字体 `zhiyongwrite`, `Captcha.FONT_11`
+    - 增加新字体 `dancing-script`, `Captcha.FONT_11`
+    - 增加新字体 `zhiyong-write`, `Captcha.FONT_12`
     - 增加高级 gif 图片参数，`quality` 和 `delay`
-    - 重命名包 `com.wf` 为 `io.github.whvcse`
+    - 重命名包 `com.wf` 为 `com.github.whvcse`
+    - 重命名类 `SpecCaptcha` 为 `PngCaptcha`
 
 - **2019-08-23 (v1.6.2)**
     - 增加10种漂亮的内置字体，不依赖系统字体

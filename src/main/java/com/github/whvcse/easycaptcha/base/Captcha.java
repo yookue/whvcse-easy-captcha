@@ -1,4 +1,4 @@
-package io.github.whvcse.easycaptcha.base;
+package com.github.whvcse.easycaptcha.base;
 
 
 import java.awt.*;
@@ -13,8 +13,8 @@ import com.wf.captcha.base.Randoms;
 
 /**
  * 验证码抽象类
- *
- * Created by 王帆 on 2018-07-27
+ * <p>
+ * Created by 王帆 on 2018-07-27<br/>
  * Modified by David HSing on 2025-03-18
  */
 @SuppressWarnings("unused")
@@ -42,7 +42,8 @@ public abstract class Captcha extends Randoms {
 
     // David Hsing modified on 2025-03-18
     public static final int FONT_11 = 10;
-    private static final String[] FONT_NAMES = new String[]{"actionj.ttf", "epilog.ttf", "fresnel.ttf", "headache.ttf", "lexo.ttf", "prefix.ttf", "progbot.ttf", "ransom.ttf", "robot.ttf", "scandal.ttf", "zhiyongwrite.ttf"};
+    public static final int FONT_12 = 11;
+    private static final String[] FONT_NAMES = new String[]{"actionj.ttf", "epilog.ttf", "fresnel.ttf", "headache.ttf", "lexo.ttf", "prefix.ttf", "progbot.ttf", "ransom.ttf", "robot.ttf", "scandal.ttf", "dancing-script.ttf", "zhiyong-write.ttf"};
 
     protected int len = 5; // 验证码随机字符长度
     protected int width = 130; // 验证码显示宽度

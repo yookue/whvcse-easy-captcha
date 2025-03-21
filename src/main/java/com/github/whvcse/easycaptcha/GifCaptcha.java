@@ -1,4 +1,4 @@
-package io.github.whvcse.easycaptcha;
+package com.github.whvcse.easycaptcha;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.geom.CubicCurve2D;
 import java.awt.image.BufferedImage;
 import java.io.OutputStream;
 import jakarta.annotation.Nonnull;
-import com.wf.captcha.base.ChineseCaptchaAbstract;
+import com.github.whvcse.easycaptcha.base.Captcha;
 import com.wf.captcha.utils.GifEncoder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,29 +14,30 @@ import lombok.Setter;
 
 
 /**
- * Gif 中文验证码类
- * Created by 王帆 on 2018-07-27
+ * GIF 验证码类
+ * <p>
+ * Created by 王帆 on 2018-07-27<br/>
  * Modified by David HSing on 2025-03-18
  */
 @NoArgsConstructor
 @Getter
 @Setter
 @SuppressWarnings("unused")
-public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
+public class GifCaptcha extends Captcha {
     private int quality = 180;
     private int delay = 150;
 
-    public ChineseGifCaptcha(int width, int height) {
+    public GifCaptcha(int width, int height) {
         setWidth(width);
         setHeight(height);
     }
 
-    public ChineseGifCaptcha(int width, int height, int len) {
+    public GifCaptcha(int width, int height, int len) {
         this(width, height);
         setLen(len);
     }
 
-    public ChineseGifCaptcha(int width, int height, int len, Font font) {
+    public GifCaptcha(int width, int height, int len, Font font) {
         this(width, height, len);
         setFont(font);
     }
@@ -125,7 +126,7 @@ public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
             g2d.setComposite(ac3);
             g2d.setColor(fontColor[i]);
             int fY = height - ((height - (int) fontMetrics.getStringBounds(String.valueOf(strs[i]), g2d).getHeight()) >> 1);  // 文字的纵坐标
-            g2d.drawString(String.valueOf(strs[i]), i * fW + fSp - 3, fY - 3);
+            g2d.drawString(String.valueOf(strs[i]), i * fW + fSp + 3, fY - 3);
         }
         g2d.dispose();
         return image;

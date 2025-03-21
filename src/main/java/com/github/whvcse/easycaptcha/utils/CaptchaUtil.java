@@ -1,4 +1,4 @@
-package io.github.whvcse.easycaptcha.utils;
+package com.github.whvcse.easycaptcha.utils;
 
 
 import java.awt.*;
@@ -6,14 +6,14 @@ import java.io.IOException;
 import jakarta.annotation.Nonnull;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import com.wf.captcha.base.Captcha;
-import com.wf.captcha.SpecCaptcha;
+import com.github.whvcse.easycaptcha.base.Captcha;
+import com.github.whvcse.easycaptcha.PngCaptcha;
 
 
 /**
  * 图形验证码工具类
- *
- * Created by 王帆 on 2018-07-27
+ * <p>
+ * Created by 王帆 on 2018-07-27<br/>
  * Modified by David HSing on 2025-03-18
  */
 @SuppressWarnings("unused")
@@ -97,11 +97,11 @@ public class CaptchaUtil {
      * @throws IOException IO异常
      */
     public static void out(int width, int height, int len, Font font, @Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response) throws IOException {
-        SpecCaptcha specCaptcha = new SpecCaptcha(width, height, len);
+        PngCaptcha pngCaptcha = new PngCaptcha(width, height, len);
         if (font != null) {
-            specCaptcha.setFont(font);
+            pngCaptcha.setFont(font);
         }
-        out(specCaptcha, request, response);
+        out(pngCaptcha, request, response);
     }
 
     /**

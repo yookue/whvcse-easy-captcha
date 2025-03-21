@@ -1,4 +1,4 @@
-package io.github.whvcse.easycaptcha.servlet;
+package com.github.whvcse.easycaptcha.servlet;
 
 
 import java.io.IOException;
@@ -7,13 +7,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import io.github.whvcse.easycaptcha.utils.CaptchaUtil;
+import com.github.whvcse.easycaptcha.utils.CaptchaUtil;
 
 
 /**
  * 验证码 servlet
- *
- * Created by 王帆 on 2018-07-27
+ * <p>
+ * Created by 王帆 on 2018-07-27<br/>
  * Modified by David HSing on 2025-03-18
  */
 @SuppressWarnings("unused")

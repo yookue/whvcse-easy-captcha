@@ -217,7 +217,9 @@
                                         <exclude>com/wf/captcha/base/Captcha.*</exclude>
                                         <exclude>com/wf/captcha/servlet/CaptchaServlet.*</exclude>
                                         <exclude>com/wf/captcha/utils/CaptchaUtil.*</exclude>
-                                        <exclude>com/wf/captcha/*GifCaptcha.*</exclude>
+                                        <exclude>com/wf/captcha/ChineseGifCaptcha.*</exclude>
+                                        <exclude>com/wf/captcha/GifCaptcha.*</exclude>
+                                        <exclude>com/wf/captcha/SpecCaptcha.*</exclude>
                                         <exclude>META-INF/*.MF</exclude>
                                         <exclude>*.ttf</exclude>
                                     </excludes>
@@ -225,10 +227,12 @@
                                 <filter>
                                     <artifact>com.yookue.forkextension.whvcse:easy-captcha</artifact>
                                     <includes>
-                                        <include>io/github/whvcse/easycaptcha/base/Captcha.*</include>
-                                        <include>io/github/whvcse/easycaptcha/servlet/CaptchaServlet.*</include>
-                                        <include>io/github/whvcse/easycaptcha/utils/CaptchaUtil.*</include>
-                                        <include>io/github/whvcse/easycaptcha/*GifCaptcha.*</include>
+                                        <include>com/github/whvcse/easycaptcha/base/Captcha.*</include>
+                                        <include>com/github/whvcse/easycaptcha/servlet/CaptchaServlet.*</include>
+                                        <include>com/github/whvcse/easycaptcha/utils/CaptchaUtil.*</include>
+                                        <include>com/github/whvcse/easycaptcha/ChineseGifCaptcha.*</include>
+                                        <include>com/github/whvcse/easycaptcha/GifCaptcha.*</include>
+                                        <include>com/github/whvcse/easycaptcha/PngCaptcha.*</include>
                                         <include>META-INF/**</include>
                                     </includes>
                                 </filter>
@@ -236,7 +240,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.wf.captcha</pattern>
-                                    <shadedPattern>io.github.whvcse.easycaptcha</shadedPattern>
+                                    <shadedPattern>com.github.whvcse.easycaptcha</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
