@@ -164,9 +164,9 @@ public class CaptchaController {
         response.setHeader("Pragma", "No-cache");
         response.setHeader("Cache-Control", "no-cache");
         response.setDateHeader("Expires", 0);
-        
+
         // 三个参数分别为宽、高、位数
-        SpecCaptcha specCaptcha = new SpecCaptcha(130, 48, 5);
+        PngCaptcha specCaptcha = new PngCaptcha(130, 48, 5);
         // 设置字体
         specCaptcha.setFont(new Font("Verdana", Font.PLAIN, 32));  // 有默认字体，可以不用设置
         // 设置类型，纯数字、纯字母、字母数字混合
@@ -174,11 +174,11 @@ public class CaptchaController {
 
         // 验证码存入session
         request.getSession().setAttribute("captcha", specCaptcha.text().toLowerCase());
-        
+
         // 输出图片流
         specCaptcha.out(response.getOutputStream());
     }
-    
+
     @PostMapping("/login")
     public JsonResult login(String username,String password,String verCode){
         // 获取session中的验证码
@@ -200,7 +200,7 @@ public class Test {
     
     public static void main(String[] args) {
         // png类型
-        SpecCaptcha captcha = new SpecCaptcha(130, 48);
+        PngCaptcha captcha = new PngCaptcha(130, 48);
         captcha.text();  // 获取验证码的字符
         captcha.textChar();  // 获取验证码的字符数组
 
@@ -241,11 +241,11 @@ public class Test {
 
 使用方法：
 ```
-SpecCaptcha captcha = new SpecCaptcha(130, 48, 5);
+PngCaptcha captcha = new PngCaptcha(130, 48, 5);
 captcha.setCharType(Captcha.TYPE_ONLY_NUMBER);
 ```
 
-> 只有`SpecCaptcha`和`GifCaptcha`设置才有效果。
+> 只有`PngCaptcha`和`GifCaptcha`设置才有效果。
 
 ### 5.3.字体设置
 内置字体：
@@ -267,7 +267,7 @@ captcha.setCharType(Captcha.TYPE_ONLY_NUMBER);
 
 使用方法：
 ```
-SpecCaptcha captcha = new SpecCaptcha(130, 48, 5);
+PngCaptcha captcha = new PngCaptcha(130, 48, 5);
 
 // 设置内置字体
 captcha.setFont(Captcha.FONT_1); 
@@ -278,7 +278,7 @@ captcha.setFont(new Font("楷体", Font.PLAIN, 28));
 
 ### 5.4.输出base64编码
 ```
-SpecCaptcha specCaptcha = new SpecCaptcha(130, 48, 5);
+PngCaptcha specCaptcha = new PngCaptcha(130, 48, 5);
 specCaptcha.toBase64();
 
 // 如果不想要base64的头部data:image/png;base64,
@@ -288,7 +288,7 @@ specCaptcha.toBase64("");  // 加一个空的参数即可
 ### 5.5.输出到文件
 ```
 FileOutputStream outputStream = new FileOutputStream(new File("C:/captcha.png"))
-SpecCaptcha specCaptcha = new SpecCaptcha(130, 48, 5);
+PngCaptcha specCaptcha = new PngCaptcha(130, 48, 5);
 specCaptcha.out(outputStream);
 ```
 
@@ -306,7 +306,7 @@ public class CaptchaController {
     @ResponseBody
     @RequestMapping("/captcha")
     public JsonResult captcha(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        SpecCaptcha specCaptcha = new SpecCaptcha(130, 48, 5);
+        PngCaptcha specCaptcha = new PngCaptcha(130, 48, 5);
         String verCode = specCaptcha.text().toLowerCase();
         String key = UUID.randomUUID().toString();
         // 存入redis并设置过期时间为30分钟
@@ -369,7 +369,7 @@ public class CaptchaController {
     - 增加新字体 `zhiyong-write`, `Captcha.FONT_12`
     - 增加高级 gif 图片参数，`quality` 和 `delay`
     - 重命名包 `com.wf` 为 `com.github.whvcse`
-    - 重命名类 `SpecCaptcha` 为 `PngCaptcha`
+    - 重命名类 `PngCaptcha` 为 `PngCaptcha`
 
 - **2019-08-23 (v1.6.2)**
     - 增加10种漂亮的内置字体，不依赖系统字体
